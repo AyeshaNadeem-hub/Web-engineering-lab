@@ -2,11 +2,182 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Web Engineering Lab 01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Engineering Lab</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <h1 id="greeting"></h1>
+    <!-- Task 1: Skip Link -->
+    <a href="#main-content" class="skip-link"> Skip to main content </a>
+
+    <!-- Task 1: Header + Navigation -->
+    <header>
+      <h1 id="greeting">Hello, World!</h1>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#schedule" aria-current="location"> Office Hours </a>
+          </li>
+
+          <li>
+            <a href="#feedback"> Send Feedback </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Task 2: Main -->
+    <main id="main-content">
+      <!-- Task 3 & 4: Office Hours -->
+      <section id="schedule">
+        <h2>Office Hours</h2>
+
+        <table>
+          <caption>
+            Weekly office hours
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>
+                <time datetime="10:00">10:00</time> –
+                <time datetime="11:00">11:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Wednesday</td>
+              <td>
+                <time datetime="13:00">13:00</time> –
+                <time datetime="14:00">14:00</time>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Friday</td>
+              <td>
+                <time datetime="10:00">10:00</time> –
+                <time datetime="11:00">11:00</time>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Task 4: Informative SVG -->
+        <figure>
+          <svg
+            role="img"
+            aria-labelledby="pin-title"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <title id="pin-title">Location pin</title>
+
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
+              fill="#0b3d91"
+            ></path>
+          </svg>
+
+          <figcaption>All office hours are held in Room 214.</figcaption>
+        </figure>
+      </section>
+
+      <!-- Task 4: Decorative SVG Divider -->
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3" fill="#0b3d91"></circle>
+      </svg>
+
+      <!-- Task 5, 6 & 7: Feedback -->
+      <section id="feedback">
+        <h2>Send Feedback</h2>
+
+        <form>
+          <!-- Name -->
+          <div>
+            <label for="name">Name</label>
+
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email">Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-describedby="email-hint"
+            />
+
+            <span id="email-hint">
+              We will only use this to reply to you.
+            </span>
+          </div>
+
+          <!-- Task 6: Topic -->
+          <fieldset>
+            <legend>Topic</legend>
+
+            <div>
+              <input type="radio" id="course" name="topic" value="course" />
+              <label for="course">Course</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="assignment"
+                name="topic"
+                value="assignment"
+              />
+              <label for="assignment">Assignment</label>
+            </div>
+
+            <div>
+              <input type="radio" id="other" name="topic" value="other" />
+              <label for="other">Other</label>
+            </div>
+          </fieldset>
+
+          <!-- Message -->
+          <div>
+            <label for="message">Message</label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              cols="40"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Task 2: Footer -->
+    <footer>
+      <address>Contact your instructor for help.</address>
+    </footer>
+
+    <!-- Existing greeting JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>
