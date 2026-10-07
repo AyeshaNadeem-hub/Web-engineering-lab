@@ -1,27 +1,123 @@
-/* Task 8: Visible keyboard focus */
+@layer reset, base, components, utilities;
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 3px solid #0b5fff;
-  outline-offset: 2px;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body,
+  h1,
+  h2,
+  p,
+  figure {
+    margin: 0;
+  }
 }
 
-/* Task 8: Skip link */
+@layer base {
+  :root {
+    color-scheme: light dark;
 
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 10px;
-  background: white;
-  color: black;
-  padding: 10px;
-  z-index: 1000;
+    --space: 1rem;
+
+    --color-bg: light-dark(oklch(98% 0.01 255), oklch(20% 0.02 255));
+
+    --color-text: light-dark(oklch(25% 0.02 255), oklch(94% 0.01 255));
+
+    --color-accent: light-dark(oklch(45% 0.18 255), oklch(75% 0.12 255));
+
+    --color-surface: color-mix(
+      in oklch,
+      var(--color-bg) 92%,
+      var(--color-accent)
+    );
+
+    --color-border: color-mix(in oklch, var(--color-text) 55%, var(--color-bg));
+  }
+
+  body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color: var(--color-text);
+    background: var(--color-bg);
+    padding: var(--space);
+  }
+
+  main {
+    max-inline-size: 60rem;
+    margin-inline: auto;
+    padding-block: 1rem;
+  }
+
+  input,
+  textarea,
+  button {
+    font: inherit;
+  }
 }
 
-/* Show skip link when keyboard focused */
-.skip-link:focus-visible {
-  top: 10px;
+@layer components {
+  form p {
+    margin-block: 0.5rem 1rem;
+  }
+
+  :where(nav ul li) a {
+    color: purple;
+  }
+
+  .nav-link {
+    color: darkgreen;
+  }
+
+  a[aria-current="location"] {
+    color: crimson;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 3px solid #0b5fff;
+    outline-offset: 2px;
+  }
+
+  table {
+    border-color: var(--color-border);
+  }
+
+  svg {
+    color: var(--color-accent);
+  }
+
+  button {
+    color: var(--color-bg);
+    background: var(--color-accent);
+  }
+
+  button:hover {
+    background: color-mix(in oklch, var(--color-accent), black 15%);
+  }
+}
+
+@layer utilities {
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .skip-link:focus-visible {
+    top: 10px;
+  }
+
+  .text-muted {
+    color: color-mix(in oklch, var(--color-text) 60%, var(--color-bg));
+  }
 }

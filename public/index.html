@@ -2,35 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Web Engineering Lab</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <!-- Task 1: Skip Link -->
-    <a href="#main-content" class="skip-link"> Skip to main content </a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Task 1: Header + Navigation -->
     <header>
       <h1 id="greeting">Hello, World!</h1>
 
       <nav>
         <ul>
           <li>
-            <a href="#schedule" aria-current="location"> Office Hours </a>
+            <a href="#schedule" class="nav-link" aria-current="location">
+              Office Hours
+            </a>
           </li>
 
           <li>
-            <a href="#feedback"> Send Feedback </a>
+            <a href="#feedback" class="nav-link"> Send Feedback </a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <!-- Task 2: Main -->
     <main id="main-content">
-      <!-- Task 3 & 4: Office Hours -->
       <section id="schedule">
         <h2>Office Hours</h2>
 
@@ -73,7 +71,6 @@
           </tbody>
         </table>
 
-        <!-- Task 4: Informative SVG -->
         <figure>
           <svg
             role="img"
@@ -86,35 +83,31 @@
 
             <path
               d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
-              fill="#0b3d91"
+              fill="currentColor"
             ></path>
           </svg>
 
-          <figcaption>All office hours are held in Room 214.</figcaption>
+          <figcaption class="text-muted">
+            All office hours are held in Room 214.
+          </figcaption>
         </figure>
       </section>
 
-      <!-- Task 4: Decorative SVG Divider -->
       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="3" fill="#0b3d91"></circle>
+        <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
       </svg>
 
-      <!-- Task 5, 6 & 7: Feedback -->
       <section id="feedback">
         <h2>Send Feedback</h2>
 
         <form>
-          <!-- Name -->
-          <div>
+          <p>
             <label for="name">Name</label>
-
             <input type="text" id="name" name="name" required />
-          </div>
+          </p>
 
-          <!-- Email -->
-          <div>
+          <p>
             <label for="email">Email</label>
-
             <input
               type="email"
               id="email"
@@ -123,12 +116,11 @@
               aria-describedby="email-hint"
             />
 
-            <span id="email-hint">
+            <span id="email-hint" class="text-muted">
               We will only use this to reply to you.
             </span>
-          </div>
+          </p>
 
-          <!-- Task 6: Topic -->
           <fieldset>
             <legend>Topic</legend>
 
@@ -153,8 +145,7 @@
             </div>
           </fieldset>
 
-          <!-- Message -->
-          <div>
+          <p>
             <label for="message">Message</label>
 
             <textarea
@@ -164,20 +155,19 @@
               cols="40"
               required
             ></textarea>
-          </div>
+          </p>
 
-          <!-- Submit -->
-          <button type="submit">Submit Feedback</button>
+          <p>
+            <button type="submit">Submit Feedback</button>
+          </p>
         </form>
       </section>
     </main>
 
-    <!-- Task 2: Footer -->
     <footer>
       <address>Contact your instructor for help.</address>
     </footer>
 
-    <!-- Existing greeting JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>
