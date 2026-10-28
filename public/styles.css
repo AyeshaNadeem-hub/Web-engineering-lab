@@ -1,6 +1,12 @@
 
 :root {
     --color-error: #c62828;
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-text: #222;
+    --color-background: #f4f4f4;
+    --color-surface: #fff;
+    --color-border: #999;
 }
 
 * {
@@ -9,17 +15,18 @@
 
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.5;
     margin: 0;
     padding: 30px;
-    background-color: #f4f4f4;
-    color: #222;
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
 main {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 25px;
-    background-color: white;
+    background-color: var(--color-surface);
     border-radius: 8px;
 }
 
@@ -32,18 +39,24 @@ label {
     margin-bottom: 8px;
 }
 
-input {
+input,
+textarea,
+button {
+    font: inherit;
+}
+
+input,
+textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #999;
+    border: 1px solid var(--color-border);
     border-radius: 4px;
-    font-size: 16px;
 }
 
 button {
     padding: 10px 15px;
-    background-color: #2563eb;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 4px;
@@ -51,7 +64,14 @@ button {
 }
 
 button:hover {
-    background-color: #1d4ed8;
+    background-color: var(--color-primary-hover);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #0b5fff;
+    outline-offset: 3px;
 }
 
 .error {

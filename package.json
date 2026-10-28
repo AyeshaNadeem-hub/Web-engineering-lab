@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "start": "serve public"
   },
   "devDependencies": {
     "typescript": "^7.0.2"
