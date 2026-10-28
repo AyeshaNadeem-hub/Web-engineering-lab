@@ -31,3 +31,8 @@ export function getRequired<T>(
 
   return element as T;
 }
+
+export function describeSlot(slot: Slot): string {
+  const status = slot.booked ? 'Booked' : 'Available';
+  return ` at  - `;
+}

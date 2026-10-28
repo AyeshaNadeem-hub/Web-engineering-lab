@@ -16,6 +16,6 @@ export function getRequired(selector, root = document) {
     return element;
 }
 export function describeSlot(slot) {
-    const status = slot.booked ? "Booked" : "Available";
-    return `${slot.title} at ${slot.time} - ${status}`;
+    const status = slot.booked ? 'Booked' : 'Available';
+    return ` at  - `;
 }
